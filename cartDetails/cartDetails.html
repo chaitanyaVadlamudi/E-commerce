@@ -1,0 +1,27 @@
+<div class="container">
+    <div class="row"> 
+        <h1 style="color:brown">Your Cart</h1>
+</div>
+    <div class="row">
+    <div class="col-sm-6 col-md-4">
+        <table class="table">
+        <tr>
+            <th>Product-Details</th>
+            <th>Price</th>
+            <th>Remove</th>
+        </tr>
+        <tr ng-repeat="item in cart">
+            <td>{{item.name}}</td>
+            <td><i class="fa fa-inr"></i>{{item.cost|currency:""}}</td>
+            <td><a ng-click="removeFromCart($index)"><i class="fa fa-trash"></i></a></td>
+        </tr>
+    </table>
+        </div>
+    <br>
+    <br>
+        </div>
+
+        <div class="row">
+            <div shipping-details-directive></div>
+        </div>
+</div>

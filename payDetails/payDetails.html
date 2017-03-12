@@ -1,0 +1,87 @@
+<!--<header>
+    <h2 align="center">Order Summary</h2>
+</header>
+<hr>
+<table>
+    <tr>
+        <th>Item</th>
+        <th>Price</th>
+
+    </tr>
+    <tr ng-repeat="obj in payy">
+        <td>{{obj.name}}</td>
+        <td>{{obj.cost}}</td>
+    </tr>
+</table>
+<br>
+<input type="button" value="Continue" ng-click="continue()" class="buttons" style="width:12%;">
+<hr>
+<h2 align="center"><b>Payment Details</b></h2>
+<hr>
+<div class="row">
+    <div class="col-md-6">
+
+        <div ng-show="continuepay">
+            <fieldset style="width:30%;padding-left:1%;">
+                <input type="button" value="Credit Card" ng-click="creditCard()" class="buttons">
+                <hr>
+                <input type="button" value="Debit Card" class="buttons" ng-click="cardfn()">
+                <hr>
+                <input type="button" value="Cash on Delivery" class="buttons" ng-click="cashon()">
+                <br>
+            </fieldset>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div ng-show="card" style="margin-top:1%" style="float:left">
+            <input type="text" placeholder="Card number" class="buttons" style="width:25%">
+            <br>
+            <br>
+            <input type="month" class="buttons" style="width:25%">Expiry date
+            <br>
+            <br>
+            <input type="text" placeholder="Name on card" class="buttons" style="width:25%">
+            <br>
+            <br>
+            <input type="button" value="Proceed" class="buttons" style="width:25%;" ng-click="confirm()">
+        </div>
+        <div ng-show="cash">
+            <input type="text" placeholder="XY34Z" disabled class="buttons" style="width:25%">
+            <br>
+            <br>
+            <input type="text" placeholder="enter captcha" class="buttons" style="width:25%">
+            <br>
+            <br>
+            <input type="button" value="Proceed" class="buttons" style="width:25%;" ng-click="confirm()">
+        </div>
+    </div>
+</div>-->
+
+
+<div class="container">
+<div class="row">
+    <h1 style="color:brown" class="text-center">Your Cart Summary</h1>
+    </div>
+    <div class="row">
+         <div class="col-sm-6 col-md-4" ng-repeat="cartItem in finalCart">
+             <div class="thumbnail">
+                <div class="caption">
+                    <h2 style="color:plum">{{cartItem.name|uppercase}}</h2> 
+                    <p><i class="fa fa-inr"></i>{{cartItem.cost|currency:""}}</p>
+                     </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <button class="btn btn-success btn-lg" ng-click="proceedPayment()">
+            <span ng-hide="proceedPay">Continue To Payment</span>
+            <span ng-show="proceedPay">Cancel Payment</span>
+        </button>
+<!--        <buton class="btn btn-danger btn-lg" ng-click="backToCart()">Back To Cart</buton>-->
+    </div>
+</div>
+<div class="container" ng-show="proceedPay">
+    <div class="row">
+        <h1 style="color:brown" class="text-center">Payment Details</h1>
+    </div>
+</div>

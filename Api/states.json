@@ -1,0 +1,36 @@
+{
+    "states": [{
+            "name": "Andhra Pradesh",
+            "code": "AP"
+                },
+        {
+            "name": "Arunachal Pradesh",
+            "code": "AR"
+                },
+        {
+            "name": "Tamil Nadu",
+            "code": "TN"
+                },
+        {
+            "name": "Kerala",
+            "code": "KL"
+                },
+        {
+            "name": "Karnataka",
+            "code": "KA"
+                },
+        {
+            "name": "Maharashtra",
+            "code": "MH"
+                },
+        {
+            "name": "Rajastan",
+            "code": "RJ"
+                },
+        {
+            "name": "Delhi",
+            "code": "DL"
+                }
+            
+              ]
+}

@@ -9,15 +9,23 @@
     <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.css">
     <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="bower_components/underscore/underscore.js"></script>
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="bower_components/angular-base64/angular-base64.js"></script>
+
     </head>
 <body>
+<!--    <div ng-include="'header/header.html'"></div>-->
     <div ui-view></div>
+    <script src="components/customDirectives.js"></script>
+    <script src="components/customFilters.js"></script>
     <script src="products/products.js"></script>
-    <script src="productDetails/productDetails.js"></script>
+    <script src="login/login.js"></script>
     <script src="products/productsSvc.js"></script>
+    <script src="productDetails/productDetails.js"></script>
     <script src="cartDetails/cartDetails.js"></script>
+    <script src="cartDetails/cartDetailsSvc.js"></script>
     <script src="payDetails/payDetails.js"></script>
     <script src="app.js"></script>
     </body>

@@ -1,0 +1,29 @@
+<div class="container">
+<div class="row">
+<div class="col-sm-6 col-md-4">
+   <h1 style="color:brown">product details:</h1>
+    </div>
+</div>
+     <div class="row">
+        <div class="col-sm-6 col-md-4 text-center">
+            <form>
+             <div class="thumbnail">
+                 <img src="{{image}}" alt="{{model}}">
+                <div class="caption">
+                    <h1>{{model|uppercase}}</h1> 
+                    <p>{{make}}</p>
+                    <p><i class="fa fa-inr"></i>{{price|currency:""}}</p>
+                    <label>
+                    Select no.of <span style="color:green">{{model}}</span> cars required<input type="number" ng-model="productsOrder"></label>
+                    <p><button  ng-click="addToCart(price,model)" class="btn btn-primary">Add To Cart</button>
+                    </p>
+                    <p><button ng-click="buy()" class="btn btn-success">Buy</button></p>
+                 </div>
+            </div>
+            </form>
+        </div>
+    </div>
+<div class="row">
+    <button class="btn btn-info" ng-click="backToProducts()">Go Back To Products</button>
+</div>
+</div>

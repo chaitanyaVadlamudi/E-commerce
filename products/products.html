@@ -1,11 +1,31 @@
-<div ng-controller="productsCtrl">
-<h1>Products</h1>
-<div ng-repeat="item in products">
-   <a ui-sref="productDetails({id})">{{item.model}}</a> 
+<div class="container">
+<div class="row">
+    <div class="col-sm-6 col-md-4">
+    <h1 style="color:brown">Products</h1></div>
 </div>
-
-
-
-
-
+    <br>
+    <br>
+    <div class="row">
+            <div carousal-directive></div>
+    </div>
+    <br>
+    <br>
+<div class="row">
+    <div class="row">
+    <div products-search-directive></div>
+</div>
+        <div class="col-sm-6 col-md-4" ng-repeat="product in products 
+                                                  |filter:{model:searchBymodel}
+                                                  |filter:{make:searchBymake}
+                                                  |priceRangeFilter:priceRange">
+             <div class="thumbnail">
+                 <img ng-click="productDetails(product)" src="{{product.picture}}" alt="{{product.model}}" width="400" height="400">
+                <div class="caption">
+                    <h1><a ng-click="productDetails(product)">{{product.model|uppercase}}</a></h1> 
+                    <p>{{product.make}}</p>
+                    <p><i class="fa fa-inr"></i>{{product.price|currency:""}}</p>
+                     </div>
+            </div>
+        </div>
+    </div>
 </div>

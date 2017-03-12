@@ -1,0 +1,70 @@
+<div class="container">
+<div class="row">
+<h1 style="color:brown">Shipping Details</h1></div>
+    <form class="form-horizontal" name="shipping">
+  <div class="form-group">
+    <label for="name" class="col-sm-2 control-label">Name</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="name" name="name" placeholder="Enter your Name" ng-model="shippingDetails.name"  ng-required="true" ng-show-options="{update on:'blur'}">
+        <div  ng-show="shipping.name.$dirty">
+            <p style="color:red" ng-show="shipping.name.$error.required"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i>Name required</p>
+        </div>
+      </div>
+        </div>
+  <div class="form-group">
+    <label for="email" class="col-sm-2 control-label">Email</label>
+    <div class="col-sm-10">
+      <input type="email" class="form-control" id="email" name="email" placeholder="Enter your Email" ng-model="shippingDetails.email" ng-required="true" ng-show-options="{update on:'blur'}" ng-pattern="/^[a-z]+[a-z0-9._]+@[a-z]+\.[a-z.]{2,5}$/">
+        <div ng-show="shipping.email.$dirty">
+            <p style="color:red"ng-show="shipping.email.$error.required"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i>Email id required</p>
+            <p style="color:red" ng-show="shipping.email.$error.pattern"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i>Invalid Email</p>
+            </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="mobile" class="col-sm-2 control-label">Mobile</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="mobile" name="mobile" placeholder="Enter your Mobile number" ng-model="shippingDetails.mobile" ng-required="true" ng-show-options="{update on:'blur'}" ng-pattern="/^[0-9]*$/" ng-minlength="10" ng-maxlength="10">
+        <div ng-show="shipping.mobile.$dirty">
+            <p style="color:red" ng-show="shipping.mobile.$error.required"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i>Mobile number required</p>
+        <p style="color:red" ng-show="shipping.mobile.$error.pattern"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i>Enter numbers only</p>
+            <p style="color:red" ng-show="shipping.mobile.$error.maxlength || shipping.mobile.$error.minlength"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i>Please enter valid mobile number</p>
+        </div>
+    </div>
+  </div>
+    <div class="form-group">
+            <label for="state" class="col-sm-2 control-label">Country</label>
+            <div class="col-sm-10">
+                <select class="form-control" ng-model="shippingDetails.country"
+                    ng-options ="country.name for country in countries" name="country" ng-required="true">
+                    <option value="">Please Select</option>
+                    <div ng-show="shipping.country.$dirty">
+                    <p ng-show="shipping.country.$error.required">Please select country</p></div>
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="district" class="col-sm-2 control-label">State</label>
+            <div class="col-sm-10">
+                <select class="form-control" ng-model=shippingDetails.state name="state" ng-options ="state.name for state in states" ng-required="true">
+                    <option value="">Please Select</option>
+                    <div ng-show="shipping.name.$dirty">
+                    <p ng-show="shipping.name.$error.required">state is required</p></div>
+                </select>
+            </div>
+        </div>
+         <div class="form-group">
+             <label for="address" class="col-sm-2 control-label">Address</label>
+            <textarea class="form-control" rows="3" id="address" name="address" placeholder="Enter your Shipping Address" ng-model="shippingDetails.address" ng-required="true" ng-show-options="{update on:'blur'}"></textarea>
+             <div ng-show="shipping.address.$dirty">
+                 <p style="color:red" ng-show="shipping.address.$error.required"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i> Address is required</p></div>
+    </div>
+        
+        <div class="form-group alert">
+                <div class="col-sm-10">
+
+    <button type="button"  class="btn btn-info" ng-click="proceedPayment()" ng-disabled="!shipping.name.$prestine && shipping.name.$invalid || !shipping.email.$prestine && shipping.email.$invalid || !shipping.mobile.$prestine && shipping.mobile.$invalid || !shipping.address.$prestine && shipping.address.$invalid || !shipping.gender.$prestine && shipping.gender.$invalid || !shipping.experience.$prestine && shipping.experience.$invalid || !shipping.occupation.$prestine && shipping.occupation.$invalid || !shipping.education.$prestine && shipping.education.$invalid  || !shipping.country.$prestine && shipping.country.$invalid  || !shipping.state.$prestine && shipping.state.$invalid">Proceed Payment</button>
+        </div>
+</div>
+    </form>
+    </div>
